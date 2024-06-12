@@ -1,14 +1,6 @@
 ### DEVSECOPS environment
 
-2.DevSecOps ucun SAST DAST tool-lar qurulmalidir
 
-2.1 SAST tool Snyk,Checkmax,forty
-
-2.2 DAST tool Burp Suite , Netsparker,
-
-2.3 Butun Prossesler CI/CD(Jenkins,Gitlab) daxilinde qurulmalidir  butun Stageler.
-
-2.4 Container tehlukesizliyi
 
 ############################################################
 
