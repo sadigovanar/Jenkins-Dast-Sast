@@ -44,14 +44,9 @@ sh 'mvn clean install'
         steps{
             script{
                 withCredentials([string(credentialsId: 'docker-pwd', variable: 'dockerpwd')]) {
-                sh 'docker login -u ${username} -p ${dockerpwd} --password-stdin' 
-```
-
-}
-
-sh 'docker tag anar02/devops-integration anar02/devops-sast-integration1:latest'
-sh 'docker push anar02/devops-sast-integration1:latest'
-
+                sh 'echo "$dockerpwd" | docker login -u anar02 --password-stdin'
+                sh 'docker tag anar02/devops-integration anar02/devops-sast-integration1:latest'
+                sh 'docker push anar02/devops-sast-integration1:latest'
 ```
 }
 
