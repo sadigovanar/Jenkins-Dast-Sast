@@ -20,11 +20,15 @@ sh 'mvn clean install'
 }
 
 ```
-    stage('SNYK-SAST-SCAN') {
+    stage('SNYK-SCA-SAST-SCAN') {
       steps {
          //snykSecurity severity: 'high', snykInstallation: 'Synk', snykTokenId: 'snyk'
          //snykSecurity failOnError: false, severity: 'high', snykInstallation: 'Synk', snykTokenId: 'snyk'
+         
+         //SCA scan
          snykSecurity failOnIssues: false, snykInstallation: 'Synk', snykTokenId: 'snyk'
+         //SAST scan 
+         snykSecurity failOnIssues: false, snykInstallation: 'Synk', snykTokenId: 'snyk', additionalArguments: '--code'
   }
   }
 
