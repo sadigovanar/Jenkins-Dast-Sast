@@ -72,7 +72,7 @@ kubernetesDeploy (configs: 'deploymentservice.yaml',kubeconfigId: 'newkub')
 ```
     stage('Running DAST Burp Scanner') {
         steps {
-           sh """ curl -vgw "\\n"  -X POST '<http://192.168.17.144:8080/api/N938jN8eS6OubnDiJtUXHGx2YpvkoJkD/v0.1/scan>' -d '{"scan_configurations":[{"name":"fast","type":"NamedConfiguration"}],"urls":["<http://192.168.17.139:31803/"]}'">""
+           sh """ curl -vgw "\\n"  -X POST '<https://${API_HOST}:${API_PORT}/api/${API_TOKEN}/v0.1/scan>' -d '{"scan_configurations":[{"name":"fast","type":"NamedConfiguration"}],"urls":["<http://192.168.17.139:31803/"]}'">""
         }
     }
 
