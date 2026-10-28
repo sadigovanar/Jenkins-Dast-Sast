@@ -44,8 +44,7 @@ sh 'mvn clean install'
         steps{
             script{
                 withCredentials([string(credentialsId: 'docker-pwd', variable: 'dockerpwd')]) {
-                sh 'docker login -u ${username} -p ${dockerpwd}'
-
+                sh 'docker login -u ${username} -p ${dockerpwd} --password-stdin' 
 ```
 
 }
